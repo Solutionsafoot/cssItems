@@ -1,0 +1,56 @@
+<html>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+
+<!--Toastr Min JS --> 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+
+
+<script>
+
+function myEditClicked(){
+console.log("user clicked update")
+//setTimeout(showClosebtn, 10000);
+toastr["success"](
+'<h3 style="margin-bottom:5%;">Your content is loading from the api</h3>'+
+'<div id="myContent"><div style="display:block;margin:auto;margin-bottom:5%;" class="myLoader"></div></iframe><div style="display:block;margin-top:10%;margin:auto;">this page will close automatically</div></div>'+
+'<button type="button" id="okBtn" class="btn btn-primary waitShow" style="margin-left:80%;" onclick="toastr.remove()">Close</button>'
+).css(({
+"margin-top":"10%",
+"width":"80vw",
+"max-width": "100vw",
+"background-color": "white",
+"color": "black",
+"padding": "3%"
+})
+)  
+};
+
+
+
+toastr.options = {
+"closeButton": true,
+"debug": false,
+"newestOnTop": false,
+"progressBar": false,
+"positionClass": "toast-top-center",
+"preventDuplicates": false,
+"onclick": null,
+"showDuration": "300",
+"hideDuration": "1000",
+"timeOut": 0,
+"extendedTimeOut": 0,
+"showEasing": "swing",
+"hideEasing": "linear",
+"tapToDismiss": false
+}
+
+
+
+</script>
+
+<div onclick="myEditClicked()">click</div>
+
+</html>
